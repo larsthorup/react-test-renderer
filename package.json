@@ -1,0 +1,40 @@
+{
+  "name": "@larsthorup/react-test-renderer",
+  "version": "0.1.0",
+  "description": "A custom React renderer for faster testing of React components",
+  "keywords": [
+    "react",
+    "testing",
+    "renderer",
+    "custom renderer"
+  ],
+  "homepage": "https://github.com/larsthorup/react-test-renderer",
+  "bugs": {
+    "url": "https://github.com/larsthorup/react-test-renderer/issues"
+  },
+  "scripts": {
+    "build": "tsc",
+    "ci": "npm run build && npm run format-check && npm run lint-exports && npm run test",
+    "format": "prettier --write .",
+    "format-check": "prettier --check .",
+    "lint-exports": "attw --pack . --ignore-rules=cjs-resolves-to-esm",
+    "test": "vitest run"
+  },
+  "author": "Lars Thorup <lars@zealake.com> (https://www.fullstackagile.eu/larsthorup/)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/larsthorup/react-test-renderer.git"
+  },
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "main": "dist/index.js",
+  "devDependencies": {
+    "@arethetypeswrong/cli": "^0.17.2",
+    "prettier": "^3.4.2",
+    "typescript": "^5.7.2",
+    "vitest": "^2.1.8"
+  }
+}
