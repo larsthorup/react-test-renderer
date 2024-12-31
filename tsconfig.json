@@ -26,5 +26,6 @@
 
     /* Not using the DOM */
     "lib": ["es2022"]
-  }
+  },
+  "include": ["src/**/*"]
 }

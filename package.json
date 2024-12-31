@@ -18,7 +18,7 @@
     "format": "prettier --write .",
     "format-check": "prettier --check .",
     "lint-exports": "attw --pack . --ignore-rules=cjs-resolves-to-esm",
-    "test": "vitest run"
+    "test": "vitest --coverage run"
   },
   "author": "Lars Thorup <lars@zealake.com> (https://www.fullstackagile.eu/larsthorup/)",
   "license": "MIT",
@@ -33,6 +33,7 @@
   "main": "dist/index.js",
   "devDependencies": {
     "@arethetypeswrong/cli": "^0.17.2",
+    "@vitest/coverage-v8": "^2.1.8",
     "prettier": "^3.4.2",
     "typescript": "^5.7.2",
     "vitest": "^2.1.8"
