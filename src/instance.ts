@@ -14,7 +14,7 @@ export function isInstance(node: Node): node is Instance {
   return 'type' in node;
 }
 
-type Predicate = (instance: Instance) => boolean;
+export type Predicate = (instance: Instance) => boolean;
 
 export function find(
   instance: Instance,

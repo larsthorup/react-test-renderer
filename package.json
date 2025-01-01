@@ -33,9 +33,18 @@
   "main": "dist/index.js",
   "devDependencies": {
     "@arethetypeswrong/cli": "^0.17.2",
+    "@types/node": "^22.10.3",
+    "@types/react-reconciler": "^0.28.9",
     "@vitest/coverage-v8": "^2.1.8",
     "prettier": "^3.4.2",
     "typescript": "^5.7.2",
     "vitest": "^2.1.8"
+  },
+  "dependencies": {
+    "react-reconciler": "^0.31.0"
+  },
+  "peerDependencies": {
+    "@types/react": "^19.0.1",
+    "react": "^19.0.0"
   }
 }
