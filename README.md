@@ -9,3 +9,12 @@ npm install @larsthorup/react-test-renderer
 ```
 
 ## API
+
+
+## Publish
+
+```
+npm version minor
+npm publish
+git push
+```
