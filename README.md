@@ -10,7 +10,6 @@ npm install @larsthorup/react-test-renderer
 
 ## API
 
-
 ## Publish
 
 ```
