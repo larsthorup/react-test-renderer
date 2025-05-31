@@ -15,6 +15,7 @@ import {
   type Predicate,
   type TextInstance,
 } from './instance.js';
+import type { TransitionStatus } from './react-reconciler-compat.js';
 
 type Container = ReactReconciler.OpaqueRoot;
 
@@ -47,7 +48,8 @@ const reconciler = ReactReconciler<
   HostConfig['updatePayload'],
   HostConfig['childSet'],
   HostConfig['timeoutHandle'],
-  HostConfig['noTimeout']
+  HostConfig['noTimeout'],
+  TransitionStatus
 >({
   supportsMutation: true,
   createInstance(type, props) {
@@ -83,10 +85,6 @@ const reconciler = ReactReconciler<
   },
   hideInstance() {},
   unhideInstance() {},
-  prepareUpdate(instance, type, oldProps, newProps) {
-    console.log('TODO: prepareUpdate', { type, oldProps, newProps });
-    return null;
-  },
   commitUpdate(
     instance,
     // updatePayload,
@@ -109,6 +107,7 @@ const reconciler = ReactReconciler<
   getPublicInstance(instance) {
     return instance;
   },
+  // @ts-expect-error TODO: figure out the typing issue here
   getRootHostContext() {
     return {};
   },
@@ -119,7 +118,6 @@ const reconciler = ReactReconciler<
   shouldSetTextContent() {
     return false;
   },
-  // @ts-expect-error TODO: figure out the typing issue here
   getCurrentUpdatePriority() {
     return DefaultEventPriority;
   },
@@ -131,7 +129,8 @@ const reconciler = ReactReconciler<
   maySuspendCommit() {
     return false;
   },
-  detachDeletedInstance() {},
+  // @ts-expect-error TODO: figure out the typing issue here
+  HostTransitionContext: {},
 });
 
 function createContainer(containerInfo: Instance) {
